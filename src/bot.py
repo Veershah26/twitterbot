@@ -12,3 +12,12 @@ api = tweepy.API(auth)
 
 user = api.me()
 print (user.name)
+print (user.location)
+
+for follower in tweepy.Cursor(api.followers).items():
+    follower.follow()
+
+print("Followed People That Follow You" + user.name)
+
+root = Tk()
+
